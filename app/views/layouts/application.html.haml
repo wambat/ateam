@@ -20,6 +20,8 @@
   %body
     %nav.ui.menu
       %h3.header.item Team one dashboard
+      = link_to t('admin.teams'), admin_teams_path, class: "item"
+      = link_to t('admin.mutants'), admin_mutants_path, class: "item"
       - unless current_user
         %a.item.right{href: admin_root_path} Login
       - else

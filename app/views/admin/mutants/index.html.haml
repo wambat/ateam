@@ -1,0 +1,18 @@
+%h1 Listing mutants
+
+%table.ui.table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @mutants.each do |mutant|
+    %tr
+      %td= mutant.name
+      %td= link_to 'Edit', edit_admin_mutant_path(mutant)
+      %td= link_to 'Destroy', admin_mutant_path(mutant), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Mutant', new_admin_mutant_path

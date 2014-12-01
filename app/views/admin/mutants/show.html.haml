@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @mutant.name
+
+= link_to 'Edit', edit_mutant_path(@mutant)
+\|
+= link_to 'Back', mutants_path

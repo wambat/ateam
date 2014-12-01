@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
 	#cut off www
 	constraints(:host => /^www\./) do
 		get "(*x)" => redirect { |params, request|
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
 	namespace :admin do
 		resources :users
 		resources :teams 
+    resources :mutants
 		root to: 'teams#index'
 	end
 

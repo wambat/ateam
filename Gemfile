@@ -25,6 +25,7 @@ gem 'cancan'
 
 # HTML processors
 gem 'haml'
+gem 'haml-rails'
 
 # Forms
 gem 'simple_form'

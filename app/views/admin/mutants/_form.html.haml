@@ -1,0 +1,12 @@
+= simple_form_for([:admin,@mutant]) do |f|
+  - if @mutant.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@mutant.errors.count, "error")
+        prohibited this mutant from being saved:
+      %ul
+        - @mutant.errors.full_messages.each do |message|
+          %li= message
+  = f.input :name, input_html: {maxlength: 30}
+  .actions
+    = f.submit( class: "ui submit button")
