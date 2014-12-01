@@ -11,4 +11,4 @@ Feature: Commander can login newerly created system
     And enter 'supercowsrocks' in user_password field 
     And I press "Sign in" button
     Then I should be redirected to 'admin_root_path' page 
-    And I should see "Welcome, commander!" message there
+    And I should see "Welcome, commander!" there

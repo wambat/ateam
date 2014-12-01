@@ -19,8 +19,8 @@ When(/^(?:I )?hit [\'"](.*?)[\'"]$/) do |link|
 end
 
 
-Then(/^I should see "(.*?)" there$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+Then(/^I should see "(.*?)" there$/) do |content|
+  expect(page).to have_content content
 end
 
 When(/^(?:I )?enter [\'"](.*?)[\'"] in (?:a )?(.*) field$/) do |value, field|
@@ -31,8 +31,4 @@ Then(/^I should be redirected to [\'"](.*?)[\'"] page$/) do |url|
   u1=URI.parse(current_url).path
   u2=eval url
   u1.should == u2
-end
-
-Then(/^I should see "(.*?)" message there$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
 end

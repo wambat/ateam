@@ -27,7 +27,7 @@ class Admin::TeamsController < Admin::SpaceController
     @team = Team.new(team_params)
     respond_to do |format|
       if @team.save
-        format.html { redirect_to [:admin,@team], notice: 'Team was successfully created.' }
+        format.html { redirect_to admin_teams_path, notice: 'Team was successfully created.' }
         format.json { render :show, status: :created, location: @team }
       else
         format.html { render :new }
@@ -41,7 +41,7 @@ class Admin::TeamsController < Admin::SpaceController
   def update
     respond_to do |format|
       if @team.update(team_params)
-        format.html { redirect_to [:admin,@team], notice: 'Team was successfully updated.' }
+        format.html { redirect_to admin_teams_path, notice: 'Team was successfully updated.' }
         format.json { render :show, status: :ok, location: @team }
       else
         format.html { render :edit }
@@ -55,7 +55,7 @@ class Admin::TeamsController < Admin::SpaceController
   def destroy
     @team.destroy
     respond_to do |format|
-      format.html { redirect_to teams_path, notice: 'Team was successfully destroyed.' }
+      format.html { redirect_to admin_teams_path, notice: 'Team was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -68,6 +68,6 @@ class Admin::TeamsController < Admin::SpaceController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params.require(:team).permit(:mame)
+      params.require(:team).permit(:name)
     end
 end

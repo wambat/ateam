@@ -14,7 +14,7 @@
     = stylesheet_link_tag "frontend", :media => 'all'
     =#%meta{:content=>"width=device-width, initial-scale=1.0", :name=>"viewport"}/
     =# javascript_include_tag 'modernizr'
-    =# javascript_include_tag 'front'
+    = javascript_include_tag 'application'
     /[if lt IE 9]
       = javascript_include_tag "http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"
   %body
@@ -23,5 +23,9 @@
       - unless current_user
         %a.item.right{href: admin_root_path} Login
       - else
-        %a.item.right{href: admin_root_path} Logout
+        = link_to t('global.sign_out'), destroy_user_session_path, method: :delete, class: "item right"
+    -flash.each do |name, msg|
+      .ui.info.message
+        .header= name
+        = msg
     = yield 
