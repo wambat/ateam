@@ -17,5 +17,5 @@ Rails.application.routes.draw do
 		sign_out_via: [:post, :delete, :get],
 		controllers: { registrations: "users/registrations" }
 
-	#root to: 'front/landing#index'
+	root to: 'front/landing#index'
 end

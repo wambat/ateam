@@ -26,6 +26,12 @@ gem 'devise'
 gem 'omniauth'
 gem 'cancan'
 
+# HTML processors
+gem 'haml'
+
+# Semantic-ui-sass
+gem 'semantic-ui-sass', '~> 0.19.3.1'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -49,4 +55,3 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
