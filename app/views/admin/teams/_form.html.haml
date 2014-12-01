@@ -1,0 +1,12 @@
+= simple_form_for([:admin,@team]) do |f|
+  - if @team.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@team.errors.count, "error")
+        prohibited this team from being saved:
+      %ul
+        - @team.errors.full_messages.each do |message|
+          %li= message
+  = f.input :name, input_html: {maxlength: 30}
+  .actions
+    = f.submit( class: "ui submit button")
