@@ -4,6 +4,5 @@ class CreateRoles < ActiveRecord::Migration
       t.string :name
     end
     Role.create(:name => "admin")
-    Role.create(:name => "editor")
   end
 end

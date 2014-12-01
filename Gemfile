@@ -13,12 +13,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
-# Cucumber
-gem 'cucumber-rails'
-gem 'database_cleaner'
-gem 'guard-cucumber'
-gem 'capybara'
-gem 'factory_girl'
+# Awesome print
+gem 'awesome_print'
+
 
 # Auth
 
@@ -42,7 +39,21 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+group :development do
+  gem 'spring'
+end
+
+group :development, :test do
+  gem 'factory_girl_rails'
+end
+group :test do
+  # Cucumber
+  gem 'rspec'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+  gem 'guard-cucumber'
+  gem 'capybara'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
