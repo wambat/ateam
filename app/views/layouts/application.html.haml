@@ -20,6 +20,8 @@
   %body
     %nav.ui.menu
       %h3.header.item Team one dashboard
-      %a.item.right{href: admin_root_path} Login
-
+      - unless current_user
+        %a.item.right{href: admin_root_path} Login
+      - else
+        %a.item.right{href: admin_root_path} Logout
     = yield 

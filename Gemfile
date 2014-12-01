@@ -26,6 +26,9 @@ gem 'cancan'
 # HTML processors
 gem 'haml'
 
+# Forms
+gem 'simple_form'
+
 # Semantic-ui-sass
 gem 'semantic-ui-sass', '~> 0.19.3.1'
 

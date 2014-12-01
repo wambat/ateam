@@ -1,3 +1,3 @@
 class Front::SpaceController < ApplicationController
-  layout 'front'
+  layout 'application'
 end
