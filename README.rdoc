@@ -6,7 +6,7 @@ What is done:
 
 * Required functionality
 
-* Devise auth
+* Devise auth (commander@commander.com:commander)
 
 * 2 working cucumber features (auth, add a team)
 
