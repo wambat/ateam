@@ -15,9 +15,9 @@
         - mutant.teams.each do |team|
           = link_to team.name, edit_admin_team_path(team)
           %br/
-      %td= link_to 'Edit', edit_admin_mutant_path(mutant)
-      %td= link_to 'Destroy', admin_mutant_path(mutant), :method => :delete, :data => { :confirm => 'Are you sure?' } if mutant.destroyable?
+      %td= link_to 'Edit', edit_admin_mutant_path(mutant), {class: "ui small button"}
+      %td= link_to 'Destroy', admin_mutant_path(mutant), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "ui small button red" if mutant.destroyable?
 
 %br
 
-= link_to 'New Mutant', new_admin_mutant_path
+= link_to 'New Mutant', new_admin_mutant_path, class: "ui small button blue"

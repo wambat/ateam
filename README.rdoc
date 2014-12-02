@@ -8,7 +8,7 @@ What is done:
 
 * Devise auth (commander@commander.com:commander)
 
-* 2 working cucumber features (auth, add a team)
+* Basic working cucumber features (auth, add and link)
 
 * Partially skinned with semantic-ui
 
