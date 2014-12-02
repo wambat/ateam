@@ -24,3 +24,7 @@ Feature: Commander can create team
     And I press "Create Team" button
     Then I should be redirected to 'admin_teams_path' page
     And I should see "Supercows" there
+    And I should see "Task 1" there
+    And I should not see "Task 2" there
+    And I should see "Mutant 1" there
+    And I should not see "Mutant 2" there

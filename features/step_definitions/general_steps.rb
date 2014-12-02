@@ -27,6 +27,10 @@ Then(/^I should see "(.*?)" there$/) do |content|
   expect(page).to have_content content
 end
 
+Then(/^I should not see "(.*?)" there$/) do |content|
+  expect(page).not_to have_content content
+end
+
 When(/^(?:I )?enter [\'"](.*?)[\'"] in (?:a )?(.*) field$/) do |value, field|
   fill_in(field, with: value)
 end

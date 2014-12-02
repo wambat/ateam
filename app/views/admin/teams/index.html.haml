@@ -2,11 +2,22 @@
 %table.ui.table
   %thead
     %tr
-      %th{:colspan => "3"}
+      %th Name
+      %th Mutants
+      %th Tasks assigned
+      %th{colspan: 3}
   %tbody
     - @teams.each do |team|
       %tr
         %td= team.name
+        %td
+          - team.mutants.each do |mutant|
+            = link_to mutant.name, edit_admin_mutant_path(mutant)
+            %br/
+        %td
+          - team.tasks.each do |task|
+            = link_to task.name, edit_admin_task_path(task)
+            %br/
         %td= link_to 'Edit', edit_admin_team_path(team)
         %td= link_to 'Destroy', admin_team_path(team), method: :delete, data: { confirm: 'Are you sure?' } if team.destroyable?
 %br/
