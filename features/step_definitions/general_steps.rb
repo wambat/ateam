@@ -18,6 +18,10 @@ When(/^(?:I )?hit [\'"](.*?)[\'"]$/) do |link|
   click_link link
 end
 
+When(/^(?:I )?select [\'"](.*?)[\'"] in a (.*) field$/) do |value, field|
+  select(value, from: field)
+end
+
 
 Then(/^I should see "(.*?)" there$/) do |content|
   expect(page).to have_content content
