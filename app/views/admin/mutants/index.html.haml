@@ -3,6 +3,7 @@
 %table.ui.table
   %tr
     %th Name
+    %th Teams
     %th
     %th
     %th
@@ -10,6 +11,10 @@
   - @mutants.each do |mutant|
     %tr
       %td= mutant.name
+      %td
+        - mutant.teams.each do |team|
+          = link_to team.name, edit_admin_team_path(team)
+          %br/
       %td= link_to 'Edit', edit_admin_mutant_path(mutant)
       %td= link_to 'Destroy', admin_mutant_path(mutant), :method => :delete, :data => { :confirm => 'Are you sure?' } if mutant.destroyable?
 

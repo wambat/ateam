@@ -3,7 +3,8 @@
 %table.ui.table
   %tr
     %th Name
-    %th Is completed
+    %th is completed
+    %th Team
     %th
     %th
 
@@ -11,6 +12,8 @@
     %tr
       %td= task.name
       %td= task.is_completed
+      %td
+        = link_to task.team.name, edit_admin_team_path(task.team) unless task.team.blank?
       %td= link_to 'Edit', edit_admin_task_path(task)
 
       %td= link_to 'Destroy', admin_task_path(task), :method => :delete, :data => { :confirm => 'Are you sure?' } if task.destroyable?
