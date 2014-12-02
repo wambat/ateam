@@ -6,15 +6,14 @@
     %th Is completed
     %th
     %th
-    %th
 
   - @tasks.each do |task|
     %tr
       %td= task.name
       %td= task.is_completed
-      %td= link_to 'Show', admin_task_path(task)
       %td= link_to 'Edit', edit_admin_task_path(task)
-      %td= link_to 'Destroy', admin_task_path(task), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+      %td= link_to 'Destroy', admin_task_path(task), :method => :delete, :data => { :confirm => 'Are you sure?' } if task.destroyable?
 
 %br
 

@@ -8,5 +8,7 @@
         - @team.errors.full_messages.each do |message|
           %li= message
   = f.input :name, input_html: {maxlength: 30}
+  = f.association :mutants
+  = f.association :tasks
   .actions
     = f.submit( class: "ui submit button")

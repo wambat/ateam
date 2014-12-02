@@ -9,5 +9,6 @@
           %li= message
   = f.input :name, input_html: {maxlength: 30}
   = f.input :is_completed
+  = f.select :team_id, Team.unlinked_or_for_task(@task).map{|t| [t.name,t.id]}, {include_blank: true}
   .actions
     = f.submit( class: "ui submit button")

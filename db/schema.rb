@@ -11,12 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141201223525) do
+ActiveRecord::Schema.define(version: 20141201232309) do
 
   create_table "assignments", force: true do |t|
     t.integer "user_id"
     t.integer "role_id"
   end
+
+  create_table "mutant_team_assignments", force: true do |t|
+    t.integer  "mutant_id"
+    t.integer  "team_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "mutant_team_assignments", ["mutant_id"], name: "index_mutant_team_assignments_on_mutant_id"
+  add_index "mutant_team_assignments", ["team_id"], name: "index_mutant_team_assignments_on_team_id"
 
   create_table "mutants", force: true do |t|
     t.string   "name"
@@ -28,12 +38,8 @@ ActiveRecord::Schema.define(version: 20141201223525) do
     t.string "name"
   end
 
-  create_table "tasks", force: true do |t|
-    t.string   "name"
-    t.boolean  "is_completed"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+# Could not dump table "tasks" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "teams", force: true do |t|
     t.string   "name"

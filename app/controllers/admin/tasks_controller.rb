@@ -69,6 +69,6 @@ class Admin::TasksController < Admin::SpaceController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :is_completed)
+      params.require(:task).permit(:name, :is_completed, :team_id)
     end
 end

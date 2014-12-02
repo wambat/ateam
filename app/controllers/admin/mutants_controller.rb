@@ -69,6 +69,6 @@ class Admin::MutantsController < Admin::SpaceController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mutant_params
-      params.require(:mutant).permit(:name)
+      params.require(:mutant).permit(:name, team_ids: [])
     end
 end

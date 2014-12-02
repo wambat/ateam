@@ -11,7 +11,7 @@
     %tr
       %td= mutant.name
       %td= link_to 'Edit', edit_admin_mutant_path(mutant)
-      %td= link_to 'Destroy', admin_mutant_path(mutant), :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Destroy', admin_mutant_path(mutant), :method => :delete, :data => { :confirm => 'Are you sure?' } if mutant.destroyable?
 
 %br
 
