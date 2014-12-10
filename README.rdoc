@@ -1,4 +1,6 @@
 == A Team
+"Professor Xavier is looking for a tool that allows him to easily form various teams of mutants and assign different tasks to those teams. Please develop a Rails application for Prof. X "
+
 
 A test project.
 
